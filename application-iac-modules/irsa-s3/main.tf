@@ -41,18 +41,3 @@ resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
 }
 
-resource "kubernetes_secret_v1" "irsa_secret" {
-  metadata {
-    name        = "${var.application_name}-irsa"
-    namespace   = "argocd"
-    annotations = {
-      "argocd.argoproj.io/sync-options" = "Prune=false"
-    }
-  }
-
-  data = {
-    iam_role_arn = base64encode(module.iam_role_for_service_accounts.iam_role_arn)
-    bucket_name  = base64encode(var.bucket_name)
-  }
-}
-
