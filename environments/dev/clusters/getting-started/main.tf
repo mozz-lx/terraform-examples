@@ -123,6 +123,7 @@ locals {
     },
     {
       argo_workflows_role_arn = module.argo_workflows_eks_role.iam_role_arn
+      argo_workflows_bucket_state = aws_s3_bucket.bucket.id
     }
   )
 

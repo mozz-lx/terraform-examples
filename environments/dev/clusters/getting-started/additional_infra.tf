@@ -18,3 +18,7 @@ module "argo_workflows_eks_role" {
     }
   }
 }
+
+resource "aws_s3_bucket" "bucket" {
+  bucket_prefix = local.name
+}
