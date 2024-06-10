@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "s3_access_policy" {
-  name        = "s3-access-policy"
+  name        = "s3-access-policy-${var.application_name}"
   description = "Policy to allow S3 access"
   policy      = jsonencode({
     Version = "2012-10-17"
