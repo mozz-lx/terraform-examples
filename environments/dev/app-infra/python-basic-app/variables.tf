@@ -3,7 +3,7 @@ variable "application_name" {
 }
 
 variable "bucket_name" {
-  default = "python-basic-app-bucket-dhsgds"
+  default = "python-basic-app-bucket-dhsgds-0001"
 }
 
 variable "role_name" {
